@@ -1,0 +1,34 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #ddeded;
+}
+
+.headerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ulContainer {
+  display: flex;
+  margin-top: 100px;
+  margin-right: 60px;
+}
+.liContainer {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 25px;
+  list-style: none;
+  font-size: 13px;
+  background-color: #baf0f0;
+}
+
+img {
+  border-radius: 10px;
+  margin-top: 20px;
+}
