@@ -8,6 +8,7 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState();
   const [registeredUser, setRegisteredUser] = useState([]);
   const [errors, setErrors] = useState({});
+  const [showRemoveAllButton, setShowRemoveAllButton] = useState(false);
   const handleFullName = (fnValue) => {
     setFullName(fnValue);
     console.log(fnValue);
@@ -41,15 +42,23 @@ const RegistrationForm = () => {
     };
     console.log("User Created", user);
     console.log("All Users", registeredUser);
+
     setRegisteredUser([...registeredUser, user]);
     setFullName("");
     setEmail("");
     setPassword("");
+    setErrors("");
+    setShowRemoveAllButton(true);
   };
 
   const handleRemoveUser = (userId) => {
     const remainingUser = registeredUser.filter((user) => user.id !== userId);
     setRegisteredUser(remainingUser);
+  };
+  const handleRemoveAllUsers = () => {
+    const allUsers = [];
+    setRegisteredUser(allUsers);
+    setShowRemoveAllButton(false);
   };
 
   return (
@@ -76,6 +85,7 @@ const RegistrationForm = () => {
               value={email || ""}
               onChange={(e) => handleEmail(e.target.value)}
             />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
           <div class="passwordDiv">
             <label for="password">Password</label>
@@ -96,7 +106,15 @@ const RegistrationForm = () => {
       <UsersRegisterd
         registeredUser={registeredUser}
         handleRemoveUser={handleRemoveUser}
+        handleRemoveAllUsers={handleRemoveAllUsers}
       />
+      <button
+        className="removeAll"
+        onClick={handleRemoveAllUsers}
+        style={{ display: showRemoveAllButton ? "block" : "none" }}
+      >
+        Remove All
+      </button>
     </div>
   );
 };

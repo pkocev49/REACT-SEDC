@@ -60,3 +60,7 @@ p {
   color: #ff0000;
   margin: 5px 0;
 }
+.removeAll {
+  margin-left: 110px;
+  display: none;
+}
