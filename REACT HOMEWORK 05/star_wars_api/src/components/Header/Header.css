@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  width: 40%;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+li {
+  cursor: pointer;
+  color: aliceblue;
+  transition: color 0.3s ease-in-out;
+}
+
+li:hover {
+  color: lightblue;
+}
+.link {
+  text-decoration: none;
+}

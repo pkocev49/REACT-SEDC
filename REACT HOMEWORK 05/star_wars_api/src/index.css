@@ -1,0 +1,12 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Star Wars", sans-serif;
+}
+
+body {
+  background-image: url("./assets/co341S.webp");
+}
