@@ -51,7 +51,7 @@ const People = () => {
       ) : (
         <div className="people">
           {people.map((p, index) => (
-            <PeoplesCard key={index} people={p} id={index} />
+            <PeoplesCard key={index} people={p} id={p.url} />
           ))}
         </div>
       )}
